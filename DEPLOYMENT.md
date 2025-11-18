@@ -1,68 +1,98 @@
 # Deployment Guide for jimmyenietan.site
 
-## Current Issue
-If the site is not showing on jimmyenietan.site, it likely needs to be deployed or rebuilt.
+## Vercel Deployment (Recommended)
 
-## Quick Fix Options
+Vercel is the recommended platform for Next.js applications as it provides optimal performance and seamless integration.
 
-### Option 1: Static Export (Recommended for Cloudflare Pages)
+### Quick Deploy
 
-The `next.config.js` has been updated to use static export mode which works better with Cloudflare Pages.
+#### Option 1: Deploy via Vercel Dashboard (Easiest)
 
-1. **Build the site:**
+1. **Go to [Vercel](https://vercel.com)** and sign in with your GitHub account
+2. **Click "Add New Project"**
+3. **Import your repository**: Select `Jim-devENG/my-portfolio` from your GitHub repositories
+4. **Configure Project**:
+   - Framework Preset: **Next.js** (auto-detected)
+   - Root Directory: `./` (default)
+   - Build Command: `npm run build` (default)
+   - Output Directory: `.next` (default)
+   - Install Command: `npm install` (default)
+5. **Add Environment Variables** (if needed): None required for this project
+6. **Click "Deploy"**
+
+Your site will be live in minutes at a URL like: `https://my-portfolio-xxx.vercel.app`
+
+#### Option 2: Deploy via Vercel CLI
+
+1. **Install Vercel CLI**:
    ```bash
-   npm run build
+   npm i -g vercel
    ```
 
-2. **Deploy the `out` folder to Cloudflare Pages:**
-   - Go to Cloudflare Dashboard → Pages
-   - Select your project
-   - Go to Settings → Builds & deployments
-   - Update build output directory to: `out`
-   - Update build command to: `npm run build`
-   - Redeploy
-
-### Option 2: Using Cloudflare Pages with next-on-pages
-
-1. **Install the adapter:**
+2. **Login to Vercel**:
    ```bash
-   npm install -D @cloudflare/next-on-pages
+   vercel login
    ```
 
-2. **Update package.json script:**
-   ```json
-   "pages:build": "next build && npx @cloudflare/next-on-pages"
-   ```
-
-3. **Build:**
+3. **Deploy**:
    ```bash
-   npm run pages:build
+   vercel
    ```
 
-4. **Deploy:**
-   - Build output directory: `.vercel/output/static`
-   - Build command: `npm run pages:build`
-
-### Option 3: Manual Upload
-
-1. Build the site:
+4. **For production deployment**:
    ```bash
-   npm run build
+   vercel --prod
    ```
 
-2. Upload the `out` folder contents to your Cloudflare Pages project
+### Custom Domain Setup
 
-## Verify Deployment
+1. **In Vercel Dashboard**:
+   - Go to your project → Settings → Domains
+   - Add your domain: `jimmyenietan.site`
+   - Follow the DNS configuration instructions
 
-1. Check Cloudflare Pages dashboard for build status
-2. Ensure custom domain is properly configured
-3. Check DNS settings for jimmyenietan.site
-4. Clear Cloudflare cache if needed
+2. **Update DNS Records**:
+   - Add the CNAME or A records as instructed by Vercel
+   - Wait for DNS propagation (usually 5-30 minutes)
 
-## Troubleshooting
+3. **SSL Certificate**:
+   - Vercel automatically provisions SSL certificates via Let's Encrypt
+   - HTTPS will be enabled automatically
 
-- **Blank page**: Check browser console for errors
-- **404 errors**: Ensure `trailingSlash: true` in next.config.js
-- **Images not loading**: Verify image paths are correct
-- **Build failures**: Check build logs in Cloudflare dashboard
+### Environment Variables
 
+If you need to add environment variables later:
+- Go to Project Settings → Environment Variables
+- Add variables for Production, Preview, and Development environments
+
+### Automatic Deployments
+
+Vercel automatically deploys:
+- **Production**: Every push to `main` branch
+- **Preview**: Every push to other branches or pull requests
+
+### Performance Features
+
+Vercel provides:
+- ✅ Automatic HTTPS
+- ✅ Global CDN
+- ✅ Edge Network
+- ✅ Image Optimization
+- ✅ Analytics (optional)
+- ✅ Automatic deployments from GitHub
+
+### Troubleshooting
+
+- **Build fails**: Check build logs in Vercel dashboard
+- **Domain not working**: Verify DNS settings and wait for propagation
+- **404 errors**: Ensure all routes are properly configured in Next.js
+
+## Alternative: Manual Build & Deploy
+
+If you prefer to build locally first:
+
+```bash
+npm run build
+```
+
+Then deploy the `.next` folder to any static hosting service.

@@ -57,28 +57,38 @@ npm start
 
 ## 🌐 Deployment
 
-### Cloudflare Pages
+### Vercel (Recommended)
 
-This project is configured for deployment on Cloudflare Pages using the Next.js adapter.
+This project is optimized for deployment on Vercel, which provides the best experience for Next.js applications.
 
-1. Install `@cloudflare/next-on-pages`:
-```bash
-npm install -D @cloudflare/next-on-pages
-```
+#### Quick Deploy
 
-2. Build for Cloudflare Pages:
-```bash
-npx @cloudflare/next-on-pages
-```
+1. **Via Vercel Dashboard**:
+   - Go to [vercel.com](https://vercel.com) and sign in with GitHub
+   - Click "Add New Project"
+   - Import your repository: `Jim-devENG/my-portfolio`
+   - Vercel will auto-detect Next.js settings
+   - Click "Deploy"
 
-3. Deploy the `.vercel/output/static` directory to Cloudflare Pages.
+2. **Via Vercel CLI**:
+   ```bash
+   npm i -g vercel
+   vercel login
+   vercel
+   ```
 
-Alternatively, you can use Cloudflare's automatic deployments by connecting your Git repository.
+#### Custom Domain
+
+1. In Vercel Dashboard → Project Settings → Domains
+2. Add your domain: `jimmyenietan.site`
+3. Follow DNS configuration instructions
+4. SSL certificate is automatically provisioned
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
 
 ### Other Platforms
 
 This Next.js app can also be deployed to:
-- **Vercel**: Automatic deployment via Git integration
 - **Netlify**: Use the Next.js build preset
 - **Any Node.js hosting**: Use `npm run build` and `npm start`
 
