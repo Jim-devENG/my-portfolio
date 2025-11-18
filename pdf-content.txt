@@ -1,0 +1,108 @@
+James 	Olorunfemi 	Enietan
+jamesenietan@gmail.com 	| 	+2349021855086
+LinkedIn 	| 	GitHub
+Plateau 	State, 	Nigeria
+Professional 	Summary
+Results-driven 	Full 	Stack 	Developer 	with 	3+ 	years 	of 	experience 	building 	scalable, 	secure, 	and 	user-
+focused 	web 	applications. 	Proficient 	in 	React.js, 	Vue.js, 	TypeScript 	PHP 	(Laravel), 	Node.js, 	and
+WordPress. 	Strong 	understanding 	of 	RESTful 	APIs, 	relational/non-relational 	databases, 	and 	cross-
+platform 	development. 	Known 	for 	collaborative 	problem-solving, 	continuous 	learning, 	and 	delivering
+high-quality 	software 	solutions 	in 	fast-paced 	environments. 	Passionate 	about 	technology, 	clean 	code,
+and 	working 	in 	a 	team 	that 	values 	innovation, 	learning, 	and 	humanity.
+Core 	Technical 	Skills
+ 	Languages 	& 	Frameworks: 	PHP 	(Laravel), 	JavaScript 	(React.js, 	Vue.js, 	Typescript), 	Node.js
+ 	Front-End 	Tools: 	HTML5, 	CSS3, 	Bootstrap, 	TailwindCSS, 	WordPress
+ 	Databases: 	MySQL, 	MongoDB,
+ 	Version 	Control 	& 	DevOps: 	Git, 	GitHub, 	CLI 	Tools
+ 	Software 	Tools: 	Figma, 	Adobe 	Photoshop/Illustrator, 	Microsoft 	Office
+ 	Other: 	REST 	APIs, 	Responsive 	Design, 	Debugging, 	Documentation, 	Deployment
+Professional 	Experience
+CTO/Developer
+iSpora 	— 	Ogbomoso 	| 	July 	2025 	– 	Present
+ 	Designed 	and 	implemented 	end-to-end 	features 	for 	a 	social 	collaboration 	platform 	using
+React.js, 	Next.js, 	Node.js, 	and 	Laravel.
+ 	Engineered 	smooth 	API 	integrations 	and 	fine-tuned 	MySQL 	queries 	to 	boost 	data 	efficiency
+and 	scalability.
+ 	Contributed 	within 	agile 	development 	cycles, 	rolling 	out 	new 	modules 	and 	improvements
+with 	CI/CD 	pipelines.
+ 	Delivered 	user-centric 	solutions 	with 	a 	focus 	on 	UI 	responsiveness, 	accessibility 	standards,
+and 	secure 	coding 	practices.
+Software 	Developer
+Getbusy— 	Jos 	| 	June 	2025 	– 	Present
+ 	Built 	and 	maintained 	full-stack 	software 	and 	applications 	with 	React.js, 	Next.js, 	Node.js, 	PHP
+Laravel
+ 	Integrated 	APIs 	and 	optimized 	database 	interactions 	(MySQL) 	for 	performance
+
+-- 1 of 4 --
+
+ 	Collaborated 	in 	agile 	teams 	and 	delivered 	timely 	features 	using 	CI/CD 	best 	practices
+ 	Ensured 	responsive 	design, 	accessibility, 	and 	security 	in 	production 	code
+Web 	Developer
+Flincap 	— 	Lagos 	| 	Oct 	2023
+ 	Built 	and 	maintained 	full-stack 	fintech 	applications 	with 	React.js 	and 	Node.js
+ 	Integrated 	financial 	APIs 	and 	optimized 	database 	interactions 	(MongoDB) 	for 	performance
+ 	Collaborated 	in 	agile 	teams 	and 	delivered 	timely 	features 	using 	CI/CD 	best 	practices
+ 	Ensured 	responsive 	design, 	accessibility, 	and 	security 	in 	production 	code
+Web 	Developer
+BlueInc 	— 	Abuja 	| 	Nov 	2023 	- 	Present
+ 	Designed 	front-end 	interfaces 	using 	Vue.js 	and 	Bootstrap
+ 	Optimized 	page 	load 	speed 	by 	25% 	using 	lazy 	loading 	and 	performance 	audits
+ 	Contributed 	to 	scalable 	architecture 	and 	enhanced 	cross-browser 	compatibility
+Web 	Developer 	(Contract)
+Velhect 	— 	Remote 	| 	2022
+ 	Developed 	user-friendly, 	scalable 	websites 	with 	Laravel 	and 	Vue.js
+ 	Worked 	with 	remote 	teams, 	aligning 	backend 	and 	frontend 	for 	seamless 	delivery
+ 	Participated 	in 	daily 	standups 	and 	remote 	code 	reviews
+Web 	Developer
+ITSkillCenter 	— 	Lagos 	| 	Aug 	2021
+ 	Led 	the 	design 	and 	development 	of 	educational 	platforms 	and 	internal 	tools
+ 	Designed 	MySQL 	schemas 	and 	built 	backend 	APIs 	for 	course 	and 	student 	management
+IT 	Specialist
+PlusWorld 	Roofing 	Ltd. 	— 	Lagos 	| 	Jun 	– 	Aug 	2021
+ 	Managed 	company-wide 	network 	configuration 	and 	system 	setup
+ 	Improved 	data 	protection 	through 	system 	hardening 	and 	backups
+Projects 	(Selected 	from 	GitHub)
+Dellyman 	Logistics 	App
+GitHub
+Built 	a 	full-featured 	logistics 	platform 	for 	parcel 	and 	delivery 	tracking
+Laravel, 	JavaScript, 	MySQL
+
+-- 2 of 4 --
+
+Learning 	Management 	System 	(LMS)
+GitHub
+Custom-built 	LMS 	with 	course 	management 	and 	user 	authentication
+Laravel, 	Bootstrap, 	MySQL
+Food 	E-commerce 	App
+GitHub
+Developed 	full-stack 	e-commerce 	platform 	with 	cart, 	order, 	and 	payment 	features
+React.js, 	Node.js, 	MongoDB
+Music 	Streaming 	App
+GitHub
+Responsive 	streaming 	interface 	with 	playlists 	and 	user 	uploads
+Laravel, 	HTML, 	CSS, 	JavaScript
+Cyber 	Security 	Service 	App
+Webifant
+Responsive 	Cybersecurity 	service 	application
+React.js, 	Node.js, 	firebase
+Sound 	Mastering 	App
+Crysgarage-studio
+Professional 	audio 	mastering 	platform 	designed 	for 	African 	by 	African. 	Get 	studio-quality 	masters 	in
+minutes, 	not 	hours.
+React.js, 	Typescript, 	php 	laravel
+Education
+Diploma 	in 	Computer 	Networking
+Federal 	University 	of 	Technology, 	Minna 	— 	2021
+Certifications 	& 	Training
+ 	Full 	Stack 	Web 	Development 	Certification 	— 	2022
+ 	DevOps 	Training 	— 	Ongoing
+ 	Blockchain 	- 	Ongoing
+
+-- 3 of 4 --
+
+Soft 	Skills
+Team 	Collaboration 	| 	Proactive 	Learning 	| 	Communication 	| 	Empathy 	| 	Problem 	Solving 	|
+Adaptability
+
+-- 4 of 4 --
+
