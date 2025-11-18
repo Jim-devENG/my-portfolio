@@ -132,10 +132,10 @@ export default function ContactPage() {
                 <Card className="bg-neutral-900/50 border-neutral-800">
                   <CardContent className="pt-6">
                     <h3 className="text-xl font-bold text-white mb-4">
-                      Let's Connect
+                      Let&apos;s Connect
                     </h3>
                     <p className="text-neutral-300 mb-6">
-                      I'm always open to discussing new projects, creative ideas,
+                      I&apos;m always open to discussing new projects, creative ideas,
                       or opportunities to be part of your vision.
                     </p>
                     <div className="space-y-4">

@@ -197,7 +197,7 @@ export default function Home() {
                 backgroundClip: "text",
               }}
             >
-              Let's Work Together
+              Let&apos;s Work Together
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -206,7 +206,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg text-neutral-300 mb-8 leading-relaxed"
             >
-              Have a project in mind? I'd love to hear about it. Let's create
+              Have a project in mind? I&apos;d love to hear about it. Let&apos;s create
               something <span className="text-blue-400 font-semibold">amazing</span> together.
             </motion.p>
             <motion.div
