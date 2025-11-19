@@ -143,7 +143,7 @@ export function Hero() {
                   ease: "linear",
                 }}
               >
-                Software Engineer
+                AI-Powered Software Engineer
               </motion.span>
               <br />
               <motion.span

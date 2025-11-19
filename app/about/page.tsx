@@ -17,9 +17,27 @@ const experiences = [
   },
   {
     year: "2025",
-    title: "CTO/Developer",
+    title: "CTO/Team Lead",
     company: "iSpora — Ogbomoso",
-    description: "Designed and implemented end-to-end features for a social collaboration platform using React.js, Next.js, Node.js, and Laravel. Engineered smooth API integrations and fine-tuned MySQL queries.",
+    description: "Leading technical strategy and development for a social collaboration platform using React.js, Next.js, Node.js, and Laravel. Managing team operations, engineering smooth API integrations, and fine-tuning MySQL queries for optimal performance.",
+  },
+  {
+    year: "2024",
+    title: "Frontend Developer",
+    company: "Venturage Technologies",
+    description: "Developed responsive front-end interfaces and user experiences using modern web technologies. Collaborated with cross-functional teams to deliver high-quality applications.",
+  },
+  {
+    year: "2023",
+    title: "Web Designer",
+    company: "tnllegals.com",
+    description: "Designed and developed professional web interfaces for legal services. Created user-friendly, responsive designs optimized for client engagement.",
+  },
+  {
+    year: "2023",
+    title: "Software Developer",
+    company: "ITSkillsCenter",
+    description: "Developed educational software solutions and learning management systems. Built interactive platforms for skill development and training.",
   },
   {
     year: "2025",
@@ -81,21 +99,22 @@ export default function AboutPage() {
                 className="space-y-4"
               >
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Full Stack Developer
+                  AI-Powered Software Engineer
                 </h3>
                 <p className="text-neutral-300 leading-relaxed">
                   Results-driven Full Stack Developer with 5+ years of experience building scalable, 
                   secure, and user-focused web applications. Proficient in React.js, Vue.js, TypeScript, 
-                  PHP (Laravel), Node.js, and WordPress.
+                  PHP (Laravel), Node.js, Python, FastAPI, and WordPress. Currently exploring AI/ML 
+                  integration and blockchain development with Solidity.
                 </p>
                 <p className="text-neutral-300 leading-relaxed">
                   I have a strong understanding of RESTful APIs, relational/non-relational databases, 
-                  and cross-platform development. Known for collaborative problem-solving, continuous 
-                  learning, and delivering high-quality software solutions in fast-paced environments.
+                  software architecture, and cross-platform development. Known for collaborative problem-solving, 
+                  continuous learning, and delivering high-quality software solutions in fast-paced environments.
                 </p>
                 <p className="text-neutral-300 leading-relaxed">
-                  Passionate about technology, clean code, and working in a team that values innovation, 
-                  learning, and humanity. Based in Plateau State, Nigeria.
+                  Passionate about technology, clean code, AI-powered solutions, and blockchain innovation. 
+                  I also have experience in creative design and founding tech startups. Based in Plateau State, Nigeria.
                 </p>
               </motion.div>
             </div>

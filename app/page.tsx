@@ -16,20 +16,27 @@ import { ArrowRight } from "lucide-react"
 // Client-only particles component to avoid hydration mismatch
 function Particles() {
   const [mounted, setMounted] = useState(false)
-  const [positions] = useState(() => 
-    Array.from({ length: 20 }, () => ({
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-      duration: 3 + Math.random() * 2,
-      delay: Math.random() * 2,
-    }))
-  )
+  const [positions, setPositions] = useState<Array<{
+    left: number
+    top: number
+    duration: number
+    delay: number
+  }>>([])
 
   useEffect(() => {
     setMounted(true)
+    // Generate random positions only on client side
+    setPositions(
+      Array.from({ length: 20 }, () => ({
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        duration: 3 + Math.random() * 2,
+        delay: Math.random() * 2,
+      }))
+    )
   }, [])
 
-  if (!mounted) return null
+  if (!mounted || positions.length === 0) return null
 
   return (
     <div className="absolute inset-0">
