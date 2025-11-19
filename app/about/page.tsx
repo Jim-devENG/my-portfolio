@@ -10,19 +10,19 @@ import { motion } from "framer-motion"
 
 const experiences = [
   {
-    year: "2025",
+    year: "2021",
     title: "Software Developer",
-    company: "Crysgarage",
-    description: "Developing and maintaining a professional audio mastering platform using React.js, TypeScript, Python, FastAPI, and Firebase. Building real-time audio processing features, RESTful API integrations, and implementing advanced audio analysis tools with ITU-R BS.1770 LUFS measurement.",
+    company: "ITSkillsCenter",
+    description: "Developed educational software solutions and learning management systems. Built interactive platforms for skill development and training.",
   },
   {
-    year: "2025",
-    title: "CTO/Team Lead",
-    company: "iSpora — Ogbomoso",
-    description: "Leading technical strategy and development for a social collaboration platform using React.js, Next.js, Node.js, and Laravel. Managing team operations, engineering smooth API integrations, and fine-tuning MySQL queries for optimal performance.",
+    year: "2022/2023",
+    title: "Web Developer",
+    company: "Flincap — Lagos",
+    description: "Built and maintained full-stack fintech applications with React.js and Node.js. Integrated financial APIs and optimized MongoDB database interactions.",
   },
   {
-    year: "2024",
+    year: "2022/2023",
     title: "Frontend Developer",
     company: "Venturage Technologies",
     description: "Developed responsive front-end interfaces and user experiences using modern web technologies. Collaborated with cross-functional teams to deliver high-quality applications.",
@@ -34,10 +34,10 @@ const experiences = [
     description: "Designed and developed professional web interfaces for legal services. Created user-friendly, responsive designs optimized for client engagement.",
   },
   {
-    year: "2023",
-    title: "Software Developer",
-    company: "ITSkillsCenter",
-    description: "Developed educational software solutions and learning management systems. Built interactive platforms for skill development and training.",
+    year: "2023 - 2025",
+    title: "Web Developer",
+    company: "BlueInc — Abuja",
+    description: "Designed front-end interfaces using Vue.js and Bootstrap. Optimized page load speed by 25% using lazy loading and performance audits.",
   },
   {
     year: "2025",
@@ -46,16 +46,16 @@ const experiences = [
     description: "Built and maintained full-stack software and applications with React.js, Next.js, Node.js, PHP Laravel. Integrated APIs and optimized database interactions for performance.",
   },
   {
-    year: "2023",
-    title: "Web Developer",
-    company: "Flincap — Lagos",
-    description: "Built and maintained full-stack fintech applications with React.js and Node.js. Integrated financial APIs and optimized MongoDB database interactions.",
+    year: "2025",
+    title: "CTO/Team Lead",
+    company: "iSpora — Ogbomoso",
+    description: "Leading technical strategy and development for a social collaboration platform using React.js, Next.js, Node.js, and Laravel. Managing team operations, engineering smooth API integrations, and fine-tuning MySQL queries for optimal performance.",
   },
   {
-    year: "2023",
-    title: "Web Developer",
-    company: "BlueInc — Abuja",
-    description: "Designed front-end interfaces using Vue.js and Bootstrap. Optimized page load speed by 25% using lazy loading and performance audits.",
+    year: "2025",
+    title: "Software Developer",
+    company: "Crysgarage",
+    description: "Developing and maintaining a professional audio mastering platform using React.js, TypeScript, Python, FastAPI, and Firebase. Building real-time audio processing features, RESTful API integrations, and implementing advanced audio analysis tools with ITU-R BS.1770 LUFS measurement.",
   },
 ]
 
@@ -99,22 +99,16 @@ export default function AboutPage() {
                 className="space-y-4"
               >
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  AI-Powered Software Engineer
+                  Software Engineer • AI Integrations • Product Builder
                 </h3>
                 <p className="text-neutral-300 leading-relaxed">
-                  Results-driven Full Stack Developer with 5+ years of experience building scalable, 
-                  secure, and user-focused web applications. Proficient in React.js, Vue.js, TypeScript, 
-                  PHP (Laravel), Node.js, Python, FastAPI, and WordPress. Currently exploring AI/ML 
-                  integration and blockchain development with Solidity.
+                  I build fast, scalable, and production-ready software products—combining solid full-stack engineering with practical AI integration. I work across React, TypeScript, Node.js, Python/FastAPI, Laravel, and modern cloud tools, delivering systems that are stable, maintainable, and optimized for real users.
                 </p>
                 <p className="text-neutral-300 leading-relaxed">
-                  I have a strong understanding of RESTful APIs, relational/non-relational databases, 
-                  software architecture, and cross-platform development. Known for collaborative problem-solving, 
-                  continuous learning, and delivering high-quality software solutions in fast-paced environments.
+                  I&apos;m currently expanding into AI/ML workflows and blockchain (Solidity), focusing on how emerging technologies can solve real problems, not just add buzzwords. My experience spans API design, distributed architecture, relational/non-relational databases, and cross-platform applications.
                 </p>
                 <p className="text-neutral-300 leading-relaxed">
-                  Passionate about technology, clean code, AI-powered solutions, and blockchain innovation. 
-                  I also have experience in creative design and founding tech startups. Based in Plateau State, Nigeria.
+                  I thrive in intense environments where shipping quality software matters. I value clean code, clarity of thought, and building products that actually work. I also bring a creative edge from years of design experience and startup building.
                 </p>
               </motion.div>
             </div>

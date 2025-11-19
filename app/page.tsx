@@ -137,17 +137,10 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
               >
                 <p className="text-lg text-neutral-300 leading-relaxed mb-6">
-                  Results-driven <span className="text-blue-400 font-semibold">Full Stack Developer</span> with{" "}
-                  <span className="text-purple-400 font-semibold">5+ years</span> of experience building scalable, 
-                  secure, and user-focused web applications. Proficient in{" "}
-                  <span className="text-pink-400 font-semibold">React.js, Vue.js, TypeScript, 
-                  PHP (Laravel), Node.js, and WordPress</span>.
+                  I build fast, scalable, and <span className="text-blue-400 font-semibold">production-ready software products</span>—combining solid full-stack engineering with practical <span className="text-purple-400 font-semibold">AI integration</span>. I work across React, TypeScript, Node.js, Python/FastAPI, Laravel, and modern cloud tools, delivering systems that are stable, maintainable, and optimized for real users.
                 </p>
                 <p className="text-lg text-neutral-300 leading-relaxed mb-8">
-                  Known for <span className="text-blue-400">collaborative problem-solving</span>,{" "}
-                  <span className="text-purple-400">continuous learning</span>, and delivering 
-                  high-quality software solutions in fast-paced environments. Passionate about 
-                  technology, clean code, and working in teams that value innovation, learning, and humanity.
+                  I&apos;m currently expanding into <span className="text-pink-400 font-semibold">AI/ML workflows and blockchain (Solidity)</span>, focusing on how emerging technologies can solve real problems, not just add buzzwords. My experience spans API design, distributed architecture, relational/non-relational databases, and cross-platform applications. I thrive in intense environments where shipping quality software matters.
                 </p>
               </motion.div>
               <motion.div

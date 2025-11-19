@@ -130,38 +130,52 @@ export function Hero() {
               initial={{ opacity: 0, y: 30, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 relative"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 relative leading-[1.15]"
             >
-              <motion.span
-                className="bg-gradient-to-r from-blue-400 via-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent bg-[length:200%_auto]"
-                animate={{
-                  backgroundPosition: ["0% center", "200% center", "0% center"],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              >
-                AI-Powered Software Engineer
-              </motion.span>
-              <br />
-              <motion.span
-                className="text-white inline-block"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-              >
-                Building Digital
-              </motion.span>
-              <motion.span
-                className="text-white inline-block ml-2"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-              >
-                Experiences
-              </motion.span>
+              <div className="flex flex-col items-center space-y-4 sm:space-y-5">
+                <motion.span
+                  className="bg-gradient-to-r from-blue-400 via-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent bg-[length:200%_auto] block text-center"
+                  animate={{
+                    backgroundPosition: ["0% center", "200% center", "0% center"],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.1 }}
+                >
+                  Software Engineer
+                </motion.span>
+                <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
+                  <motion.span
+                    className="text-white/95 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight"
+                    initial={{ opacity: 0, x: -15 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+                  >
+                    AI Integrations
+                  </motion.span>
+                  <motion.span
+                    className="text-blue-400/40 text-lg sm:text-xl md:text-2xl font-light"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
+                  >
+                    •
+                  </motion.span>
+                  <motion.span
+                    className="text-white/95 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight"
+                    initial={{ opacity: 0, x: 15 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+                  >
+                    Intelligent Product Builder
+                  </motion.span>
+                </div>
+              </div>
             </motion.h1>
           </motion.div>
 
@@ -171,10 +185,10 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-neutral-300 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            Results-driven Full Stack Developer with{" "}
-            <span className="text-blue-400 font-semibold">5+ years</span> of experience building{" "}
-            <span className="text-purple-400 font-semibold">scalable</span>,{" "}
-            <span className="text-pink-400 font-semibold">secure</span>, and user-focused web applications.
+            Building full-stack systems,{" "}
+            <span className="text-blue-400 font-semibold">integrating AI</span> where it drives impact, and{" "}
+            <span className="text-purple-400 font-semibold">shipping products</span> that{" "}
+            <span className="text-pink-400 font-semibold">solve real problems</span>.
           </motion.p>
 
           <motion.div
