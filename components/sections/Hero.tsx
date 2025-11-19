@@ -135,17 +135,12 @@ export function Hero() {
               <div className="flex flex-col items-center space-y-4 sm:space-y-5">
                 <motion.span
                   className="bg-gradient-to-r from-blue-400 via-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent bg-[length:200%_auto] block text-center"
-                  animate={{
-                    backgroundPosition: ["0% center", "200% center", "0% center"],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.1 }}
+                  style={{
+                    animation: "gradient 5s linear infinite",
+                  }}
                 >
                   Software Engineer
                 </motion.span>
