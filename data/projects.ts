@@ -13,7 +13,7 @@ export const projects: Project[] = [
     id: "1",
     title: "Crys Garage Studio",
     description: "Professional audio mastering platform designed for African by African. Get studio-quality masters in minutes, not hours.",
-    stack: ["React.js", "TypeScript", "PHP Laravel"],
+    stack: ["React.js", "TypeScript", "Python", "FastAPI", "Firebase"],
     liveUrl: "https://crysgarage.studio",
     githubUrl: "https://github.com/Jim-devENG/crysgarage-production",
     thumbnail: "/project-screenshots/crysgarage.png",

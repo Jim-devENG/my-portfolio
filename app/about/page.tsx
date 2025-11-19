@@ -11,6 +11,12 @@ import { motion } from "framer-motion"
 const experiences = [
   {
     year: "2025",
+    title: "Software Developer",
+    company: "Crysgarage",
+    description: "Developing and maintaining a professional audio mastering platform using React.js, TypeScript, Python, FastAPI, and Firebase. Building real-time audio processing features, RESTful API integrations, and implementing advanced audio analysis tools with ITU-R BS.1770 LUFS measurement.",
+  },
+  {
+    year: "2025",
     title: "CTO/Developer",
     company: "iSpora — Ogbomoso",
     description: "Designed and implemented end-to-end features for a social collaboration platform using React.js, Next.js, Node.js, and Laravel. Engineered smooth API integrations and fine-tuned MySQL queries.",
