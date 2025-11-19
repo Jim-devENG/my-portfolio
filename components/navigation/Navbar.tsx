@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -40,8 +41,15 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-bold text-white">
-            James Enietan
+          <Link href="/" className="flex items-center space-x-2">
+            <Image
+              src="/James Enietan Logo favicon.png"
+              alt="James Enietan Logo"
+              width={32}
+              height={32}
+              className="object-contain"
+            />
+            <span className="text-xl font-bold text-white">James Enietan</span>
           </Link>
 
           {/* Desktop Navigation */}

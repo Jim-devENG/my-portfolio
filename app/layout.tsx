@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   description: "AI-Powered Software Engineer with 5+ years of experience building scalable, secure, and user-focused web applications. Specializing in React, Node.js, Python, FastAPI, and blockchain development.",
   keywords: ["AI-powered software engineer", "full stack developer", "software engineer", "blockchain developer", "developer", "portfolio", "James Enietan", "React", "Node.js", "Laravel", "Python", "FastAPI", "Solidity", "AI", "machine learning"],
   authors: [{ name: "James Olorunfemi Enietan" }],
+  icons: {
+    icon: "/James Enietan Logo favicon.png",
+    shortcut: "/James Enietan Logo favicon.png",
+    apple: "/James Enietan Logo favicon.png",
+  },
   openGraph: {
     title: "James Olorunfemi Enietan | AI-Powered Software Engineer",
     description: "AI-Powered Software Engineer with 5+ years of experience building scalable, secure, and user-focused web applications. Specializing in React, Node.js, Python, FastAPI, and blockchain development.",
@@ -24,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   )
 }
