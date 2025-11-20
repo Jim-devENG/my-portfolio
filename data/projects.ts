@@ -74,7 +74,7 @@ export const projects: Project[] = [
   {
     id: "9",
     title: "AI Counseling",
-    description: "AI-powered counseling and mental health support platform",
+    description: "Counseling and mental health support platform",
     stack: ["Next.js", "TypeScript", "OpenAI API"],
     liveUrl: "https://aicounselng.com",
     thumbnail: "/project-screenshots/aicounseling.png",

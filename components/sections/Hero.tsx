@@ -223,9 +223,9 @@ export function Hero() {
             className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
           >
             {[
-              { number: "5+", label: "Years Experience" },
               { number: "10+", label: "Projects" },
               { number: "100%", label: "Dedicated" },
+              { number: "∞", label: "Passion" },
             ].map((stat, i) => (
               <motion.div
                 key={i}
