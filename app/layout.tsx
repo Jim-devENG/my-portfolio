@@ -19,6 +19,21 @@ export const metadata: Metadata = {
     description: "Software Engineer building scalable, secure, and user-focused web applications. Specializing in React, Node.js, Python, FastAPI, and blockchain development.",
     type: "website",
     url: "https://jimmyenietan.site",
+    siteName: "James Olorunfemi Enietan",
+    images: [
+      {
+        url: "/James Enietan Logo favicon.png",
+        width: 1200,
+        height: 630,
+        alt: "James Olorunfemi Enietan - Software Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "James Olorunfemi Enietan | Software Engineer",
+    description: "Software Engineer building scalable, secure, and user-focused web applications. Specializing in React, Node.js, Python, FastAPI, and blockchain development.",
+    images: ["/James Enietan Logo favicon.png"],
   },
 }
 
