@@ -90,8 +90,8 @@ export const projects: Project[] = [
   {
     id: "11",
     title: "Liquid Canvas",
-    description: "AI-powered creative studio platform for digital art and design",
-    stack: ["React.js", "TypeScript", "AI/ML"],
+    description: "Autonomous art outreach platform for automated lead generation. Discovers websites (art galleries, interior decor, home tech, mom blogs, NFT platforms, editorial media), scrapes contact information, verifies emails, generates personalized emails with AI (Google Gemini), and sends them via Gmail API. Includes pipeline workflow with dashboard for monitoring prospects, jobs, and email campaigns.",
+    stack: ["Python", "FastAPI", "SQLAlchemy", "PostgreSQL", "Supabase", "TypeScript", "Next.js", "React", "Tailwind CSS"],
     liveUrl: "https://agent.liquidcanvas.art",
     thumbnail: "/project-screenshots/liquidcanvas.png",
   },
@@ -102,6 +102,12 @@ export const projects: Project[] = [
     stack: ["React.js", "TypeScript", "Node.js"],
     liveUrl: "http://cpdemo.blueinctech.com",
     thumbnail: "/project-screenshots/cpdemo.png",
+  },
+  {
+    id: "13",
+    title: "Goodwill Staffing Compliance Tracker",
+    description: "Full-stack web app for managing candidate credentials, certifications, and compliance documents. Tracks expiry dates, sends email reminders (30, 14, and 7 days before expiry), and provides a dashboard for credential management with analytics and charts. Features token-based authentication with role-based access (Super Admin, Admin, Recruiter) and automatic status tracking.",
+    stack: ["PHP 8.2+", "Laravel 12", "JavaScript", "React 19", "Tailwind CSS 3.4", "SQLite", "MySQL", "Vite 7"],
   },
 ]
 
