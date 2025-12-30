@@ -87,5 +87,21 @@ export const projects: Project[] = [
     liveUrl: "https://snaxyzobolicious.com",
     thumbnail: "/project-screenshots/snaxyzobolicious.png",
   },
+  {
+    id: "11",
+    title: "Liquid Canvas",
+    description: "AI-powered creative studio platform for digital art and design",
+    stack: ["React.js", "TypeScript", "AI/ML"],
+    liveUrl: "https://agent.liquidcanvas.art",
+    thumbnail: "/project-screenshots/liquidcanvas.png",
+  },
+  {
+    id: "12",
+    title: "CP Demo",
+    description: "Interactive demo platform showcasing innovative solutions",
+    stack: ["React.js", "TypeScript", "Node.js"],
+    liveUrl: "http://cpdemo.blueinctech.com",
+    thumbnail: "/project-screenshots/cpdemo.png",
+  },
 ]
 
