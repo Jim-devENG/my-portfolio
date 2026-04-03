@@ -5,11 +5,11 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const navItems = [
   { name: "Home", href: "/" },
+  { name: "Express", href: "/express" },
   { name: "Projects", href: "/projects" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },

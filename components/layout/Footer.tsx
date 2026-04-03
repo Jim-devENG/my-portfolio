@@ -7,6 +7,7 @@ const socialLinks = [
   { name: "Twitter", icon: Twitter, href: "#" },
   { name: "Email", icon: Mail, href: "mailto:jamesenietan@gmail.com" },
 ]
+const COPYRIGHT_YEAR = "2026"
 
 export function Footer() {
   return (
@@ -14,7 +15,7 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
           <div className="text-neutral-400 text-sm">
-            © {new Date().getFullYear()} James Olorunfemi Enietan. All rights reserved.
+            © {COPYRIGHT_YEAR} James Olorunfemi Enietan. All rights reserved.
           </div>
           <div className="flex items-center space-x-6">
             {socialLinks.map((link) => {

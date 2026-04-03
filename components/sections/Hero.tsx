@@ -132,7 +132,7 @@ export function Hero() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 relative leading-[1.15]"
             >
-              <div className="flex flex-col items-center space-y-4 sm:space-y-5">
+              <span className="flex flex-col items-center space-y-4 sm:space-y-5">
                 <motion.span
                   className="bg-gradient-to-r from-blue-400 via-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent bg-[length:200%_auto] block text-center"
                   initial={{ opacity: 0, y: 20 }}
@@ -144,7 +144,7 @@ export function Hero() {
                 >
                   Software Engineer
                 </motion.span>
-                <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
+                <span className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
                   <motion.span
                     className="text-white/95 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight"
                     initial={{ opacity: 0, x: -15 }}
@@ -169,8 +169,8 @@ export function Hero() {
                   >
                     Intelligent Product Builder
                   </motion.span>
-                </div>
-              </div>
+                </span>
+              </span>
             </motion.h1>
           </motion.div>
 
