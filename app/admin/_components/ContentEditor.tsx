@@ -28,6 +28,16 @@ type Issue = { path: (string | number)[]; message: string }
 
 const toErrorMap = (issues: Issue[]) => Object.fromEntries(issues.map((i) => [i.path.join("."), i.message]))
 
+/** Parses a JSON response, turning proxy/HTML error pages into a readable error. */
+async function readBody(res: Response) {
+  const text = await res.text()
+  try {
+    return JSON.parse(text)
+  } catch {
+    return { error: `The server returned an unexpected response (HTTP ${res.status}). Try again in a moment.` }
+  }
+}
+
 function goToLogin() {
   window.location.href = `/admin/login?next=${encodeURIComponent(window.location.pathname)}`
 }
@@ -49,7 +59,7 @@ export function ContentEditor({ fileKey }: { fileKey: ContentKey }) {
     fetch(`/api/admin/content/${fileKey}`)
       .then(async (res) => {
         if (res.status === 401) return goToLogin()
-        const body = await res.json()
+        const body = await readBody(res)
         if (!res.ok) throw new Error(body.error ?? "Couldn't load content")
         setData(body.data)
         setSavedSnapshot(JSON.stringify(body.data))
@@ -99,7 +109,7 @@ export function ContentEditor({ fileKey }: { fileKey: ContentKey }) {
         body: JSON.stringify({ data: prepared, uploads: pending }),
       })
       if (res.status === 401) return goToLogin()
-      const body = await res.json()
+      const body = await readBody(res)
       if (!res.ok) {
         if (body.issues) setErrors(toErrorMap(body.issues))
         throw new Error(body.error ?? "Save failed")

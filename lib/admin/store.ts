@@ -28,12 +28,40 @@ export interface ContentStore {
 export function getStore(): ContentStore {
   const mode = process.env.CONTENT_STORE ?? (process.env.NODE_ENV === "production" ? "github" : "local")
   if (mode === "local") return localStore
-  const token = process.env.GITHUB_TOKEN
-  const repo = process.env.GITHUB_REPO
-  if (!token || !repo) {
-    throw new AdminError(503, "Saving isn't configured: set GITHUB_TOKEN and GITHUB_REPO in the Vercel environment.")
+  const token = process.env.GITHUB_TOKEN?.trim()
+  if (!token) {
+    throw new AdminError(503, "Saving isn't configured: add GITHUB_TOKEN in Vercel → Settings → Environment Variables, then redeploy.")
   }
-  return githubStore(token, repo, process.env.GITHUB_BRANCH || "main")
+  return githubStore(token, resolveRepo(), process.env.GITHUB_BRANCH?.trim() || "main")
+}
+
+/** GITHUB_REPO as owner/repo, tolerating a pasted URL; falls back to the repo Vercel deploys from. */
+function resolveRepo() {
+  const raw = process.env.GITHUB_REPO?.trim()
+  if (!raw) {
+    const { VERCEL_GIT_REPO_OWNER: owner, VERCEL_GIT_REPO_SLUG: slug } = process.env
+    if (owner && slug) return `${owner}/${slug}`
+    throw new AdminError(503, "Saving isn't configured: add GITHUB_REPO (e.g. Jim-devENG/my-portfolio) in Vercel, then redeploy.")
+  }
+  const repo = raw
+    .replace(/^https?:\/\/(www\.)?github\.com\//i, "")
+    .replace(/\.git$/i, "")
+    .replace(/\/+$/, "")
+  if (!/^[\w.-]+\/[\w.-]+$/.test(repo)) {
+    // Don't echo the value: a token pasted into the wrong field would end up in logs.
+    throw new AdminError(503, "GITHUB_REPO should look like owner/repo (e.g. Jim-devENG/my-portfolio). Fix it in Vercel, then redeploy.")
+  }
+  return repo
+}
+
+function githubErrorMessage(status: number, repo: string, request: string) {
+  if (status === 401) {
+    return "GitHub rejected GITHUB_TOKEN (401): it may have expired or been revoked. Create a new token, update it in Vercel, then redeploy."
+  }
+  if (status === 403 || status === 404) {
+    return `GitHub returned ${status} for ${repo}. Check that GITHUB_REPO is exactly the owner/repo name and that GITHUB_TOKEN has access to that repository with Contents: read and write.`
+  }
+  return `GitHub ${request} failed (${status}).`
 }
 
 function resolveInRepo(filePath: string) {
@@ -71,12 +99,11 @@ function githubStore(token: string, repo: string, branch: string): ContentStore 
       },
     })
     if (!res.ok) {
-      const body = await res.text()
-      const hint = [401, 403, 404].includes(res.status) ? " Check that GITHUB_TOKEN can read and write GITHUB_REPO." : ""
+      // 500 rather than 502: Cloudflare replaces 502 responses with its own HTML page.
       throw new AdminError(
-        res.status === 422 ? 409 : 502,
-        `GitHub ${init.method ?? "GET"} ${endpoint} failed (${res.status}).${hint}`,
-        body
+        res.status === 422 ? 409 : 500,
+        githubErrorMessage(res.status, repo, `${init.method ?? "GET"} ${endpoint}`),
+        await res.text()
       )
     }
     return (init.accept?.includes("raw") ? res.text() : res.json()) as Promise<T>

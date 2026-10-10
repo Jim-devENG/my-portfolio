@@ -136,9 +136,10 @@ Set these environment variables in Vercel (see `.env.example`):
 | `ADMIN_PASSWORD` | Admin login password (at least 10 characters) |
 | `ADMIN_SESSION_SECRET` | Random string of 32+ characters used to sign the login cookie |
 | `GITHUB_TOKEN` | Fine-grained token with **Contents: read and write** on this repo only |
-| `GITHUB_REPO` | `owner/repo`, e.g. `Jim-devENG/my-portfolio` |
+| `GITHUB_REPO` | `owner/repo`, e.g. `Jim-devENG/my-portfolio` (optional on Vercel: defaults to the connected repo) |
 | `GITHUB_BRANCH` | Branch Vercel deploys from (default `main`) |
 
+Vercel only applies changed variables to new deployments, so redeploy after editing them.
 Changing `ADMIN_PASSWORD` or `ADMIN_SESSION_SECRET` signs out every session.
 
 ### Styling
