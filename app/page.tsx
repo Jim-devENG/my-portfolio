@@ -8,7 +8,8 @@ import { Hero } from "@/components/sections/Hero"
 import { SectionHeader } from "@/components/sections/SectionHeader"
 import { SkillsGrid } from "@/components/sections/SkillsGrid"
 import { ProjectCard } from "@/components/cards/ProjectCard"
-import { projects } from "@/data/projects"
+import { home, projects } from "@/lib/content"
+import { HighlightedText, countHighlights } from "@/components/ui/highlighted-text"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
@@ -67,7 +68,8 @@ function Particles() {
 export default function Home() {
   // Only show projects with live URLs on the home page
   const liveProjects = projects.filter(project => project.liveUrl)
-  const featuredProjects = liveProjects.slice(0, 3)
+  const featuredProjects = liveProjects.slice(0, home.projectsSection.count)
+  const { skillsSection, projectsSection, aboutSection, cta } = home
 
   return (
     <main className="min-h-screen bg-[#09090b]">
@@ -79,8 +81,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeader
-            title="Skills & Technologies"
-            subtitle="Technologies I work with to bring ideas to life"
+            title={skillsSection.title}
+            subtitle={skillsSection.subtitle}
           />
           <SkillsGrid />
         </div>
@@ -94,8 +96,8 @@ export default function Home() {
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeader
-            title="Featured Projects"
-            subtitle="A selection of my recent work"
+            title={projectsSection.title}
+            subtitle={projectsSection.subtitle}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {featuredProjects.map((project, index) => (
@@ -111,7 +113,7 @@ export default function Home() {
             >
               <Button asChild variant="outline" size="lg" className="group border-2 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all">
                 <Link href="/projects" className="flex items-center">
-                  View All Projects
+                  {projectsSection.buttonLabel}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -126,8 +128,8 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
             <SectionHeader
-              title="About Me"
-              subtitle="A brief introduction"
+              title={aboutSection.title}
+              subtitle={aboutSection.subtitle}
             />
             <div className="prose prose-invert max-w-none">
               <motion.div
@@ -136,12 +138,17 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <p className="text-lg text-neutral-300 leading-relaxed mb-6">
-                  I build fast, scalable, and <span className="text-blue-400 font-semibold">production-ready software products</span>—combining solid full-stack engineering with practical <span className="text-purple-400 font-semibold">AI integration</span>. I work across React, TypeScript, Node.js, Python/FastAPI, Laravel, and modern cloud tools, delivering systems that are stable, maintainable, and optimized for real users.
-                </p>
-                <p className="text-lg text-neutral-300 leading-relaxed mb-8">
-                  I&apos;m currently expanding into <span className="text-pink-400 font-semibold">AI/ML workflows and blockchain (Solidity)</span>, focusing on how emerging technologies can solve real problems, not just add buzzwords. My experience spans API design, distributed architecture, relational/non-relational databases, and cross-platform applications. I thrive in intense environments where shipping quality software matters.
-                </p>
+                {aboutSection.paragraphs.map((paragraph, i) => (
+                  <p
+                    key={i}
+                    className={`text-lg text-neutral-300 leading-relaxed ${i === aboutSection.paragraphs.length - 1 ? "mb-8" : "mb-6"}`}
+                  >
+                    <HighlightedText
+                      text={paragraph}
+                      offset={aboutSection.paragraphs.slice(0, i).reduce((n, p) => n + countHighlights(p), 0)}
+                    />
+                  </p>
+                ))}
               </motion.div>
               <motion.div
                 className="text-center"
@@ -152,7 +159,7 @@ export default function Home() {
               >
                 <Button asChild size="lg" className="group bg-gradient-to-r from-blue-500 to-purple-500 border-0 hover:shadow-lg hover:shadow-blue-500/50 transition-all">
                   <Link href="/about" className="flex items-center">
-                    Learn More
+                    {aboutSection.buttonLabel}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
@@ -197,7 +204,7 @@ export default function Home() {
                 backgroundClip: "text",
               }}
             >
-              Let&apos;s Work Together
+              {cta.title}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -206,8 +213,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg text-neutral-300 mb-8 leading-relaxed"
             >
-              Have a project in mind? I&apos;d love to hear about it. Let&apos;s create
-              something <span className="text-blue-400 font-semibold">amazing</span> together.
+              <HighlightedText text={cta.text} />
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -219,7 +225,7 @@ export default function Home() {
             >
               <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-purple-500 border-0 hover:shadow-2xl hover:shadow-blue-500/50 transition-all text-lg px-8 py-6">
                 <Link href="/contact" className="flex items-center">
-                  Get In Touch
+                  {cta.buttonLabel}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

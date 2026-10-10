@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "headline": "Software Engineer",
+    "taglines": [
+      "AI Integrations",
+      "Intelligent Product Builder"
+    ],
+    "intro": "Building full-stack systems, **integrating AI** where it drives impact, and **shipping products** that **solve real problems**.",
+    "primaryCta": {
+      "label": "View Projects",
+      "href": "/projects"
+    },
+    "secondaryCta": {
+      "label": "Get In Touch",
+      "href": "/contact"
+    },
+    "stats": [
+      {
+        "value": "10+",
+        "label": "Projects"
+      },
+      {
+        "value": "100%",
+        "label": "Dedicated"
+      },
+      {
+        "value": "∞",
+        "label": "Passion"
+      }
+    ]
+  },
+  "skillsSection": {
+    "title": "Skills & Technologies",
+    "subtitle": "Technologies I work with to bring ideas to life"
+  },
+  "projectsSection": {
+    "title": "Featured Projects",
+    "subtitle": "A selection of my recent work",
+    "count": 3,
+    "buttonLabel": "View All Projects"
+  },
+  "aboutSection": {
+    "title": "About Me",
+    "subtitle": "A brief introduction",
+    "paragraphs": [
+      "I build fast, scalable, and **production-ready software products**—combining solid full-stack engineering with practical **AI integration**. I work across React, TypeScript, Node.js, Python/FastAPI, Laravel, and modern cloud tools, delivering systems that are stable, maintainable, and optimized for real users.",
+      "I'm currently expanding into **AI/ML workflows and blockchain (Solidity)**, focusing on how emerging technologies can solve real problems, not just add buzzwords. My experience spans API design, distributed architecture, relational/non-relational databases, and cross-platform applications. I thrive in intense environments where shipping quality software matters."
+    ],
+    "buttonLabel": "Learn More"
+  },
+  "cta": {
+    "title": "Let's Work Together",
+    "text": "Have a project in mind? I'd love to hear about it. Let's create something **amazing** together.",
+    "buttonLabel": "Get In Touch"
+  }
+}

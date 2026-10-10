@@ -6,58 +6,7 @@ import { Footer } from "@/components/layout/Footer"
 import { SectionHeader } from "@/components/sections/SectionHeader"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
-
-
-const experiences = [
-  {
-    year: "2021",
-    title: "Software Developer",
-    company: "ITSkillsCenter",
-    description: "Developed educational software solutions and learning management systems. Built interactive platforms for skill development and training.",
-  },
-  {
-    year: "2022/2023",
-    title: "Web Developer",
-    company: "Flincap — Lagos",
-    description: "Built and maintained full-stack fintech applications with React.js and Node.js. Integrated financial APIs and optimized MongoDB database interactions.",
-  },
-  {
-    year: "2022/2023",
-    title: "Frontend Developer",
-    company: "Venturage Technologies",
-    description: "Developed responsive front-end interfaces and user experiences using modern web technologies. Collaborated with cross-functional teams to deliver high-quality applications.",
-  },
-  {
-    year: "2023",
-    title: "Web Designer",
-    company: "tnllegals.com",
-    description: "Designed and developed professional web interfaces for legal services. Created user-friendly, responsive designs optimized for client engagement.",
-  },
-  {
-    year: "2023 - 2025",
-    title: "Web Developer",
-    company: "BlueInc — Abuja",
-    description: "Designed front-end interfaces using Vue.js and Bootstrap. Optimized page load speed by 25% using lazy loading and performance audits.",
-  },
-  {
-    year: "2025",
-    title: "Software Developer",
-    company: "Getbusy — Jos",
-    description: "Built and maintained full-stack software and applications with React.js, Next.js, Node.js, PHP Laravel. Integrated APIs and optimized database interactions for performance.",
-  },
-  {
-    year: "2025",
-    title: "CTO/Team Lead",
-    company: "iSpora — Ogbomoso",
-    description: "Leading technical strategy and development for a social collaboration platform using React.js, Next.js, Node.js, and Laravel. Managing team operations, engineering smooth API integrations, and fine-tuning MySQL queries for optimal performance.",
-  },
-  {
-    year: "2025",
-    title: "Software Developer",
-    company: "Crysgarage",
-    description: "Developing and maintaining a professional audio mastering platform using React.js, TypeScript, Python, FastAPI, and Firebase. Building real-time audio processing features, RESTful API integrations, and implementing advanced audio analysis tools with ITU-R BS.1770 LUFS measurement.",
-  },
-]
+import { about } from "@/lib/content"
 
 export default function AboutPage() {
   return (
@@ -66,8 +15,8 @@ export default function AboutPage() {
       <section className="pt-32 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            title="About Me"
-            subtitle="A glimpse into my journey and philosophy"
+            title={about.title}
+            subtitle={about.subtitle}
           />
 
           <div className="max-w-4xl mx-auto">
@@ -82,8 +31,8 @@ export default function AboutPage() {
               >
                 <div className="aspect-square rounded-xl overflow-hidden border border-neutral-800">
                   <Image
-                    src="/BIRTHDw.png"
-                    alt="James Olorunfemi Enietan"
+                    src={about.photo}
+                    alt={about.photoAlt}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -99,17 +48,13 @@ export default function AboutPage() {
                 className="space-y-4"
               >
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Software Engineer • AI Integrations • Product Builder
+                  {about.heading}
                 </h3>
-                <p className="text-neutral-300 leading-relaxed">
-                  I build fast, scalable, and production-ready software products—combining solid full-stack engineering with practical AI integration. I work across React, TypeScript, Node.js, Python/FastAPI, Laravel, and modern cloud tools, delivering systems that are stable, maintainable, and optimized for real users.
-                </p>
-                <p className="text-neutral-300 leading-relaxed">
-                  I&apos;m currently expanding into AI/ML workflows and blockchain (Solidity), focusing on how emerging technologies can solve real problems, not just add buzzwords. My experience spans API design, distributed architecture, relational/non-relational databases, and cross-platform applications.
-                </p>
-                <p className="text-neutral-300 leading-relaxed">
-                  I thrive in intense environments where shipping quality software matters. I value clean code, clarity of thought, and building products that actually work. I also bring a creative edge from years of design experience and startup building.
-                </p>
+                {about.bio.map((paragraph, i) => (
+                  <p key={i} className="text-neutral-300 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
               </motion.div>
             </div>
 
@@ -122,38 +67,18 @@ export default function AboutPage() {
               className="mb-16"
             >
               <h3 className="text-2xl font-bold text-white mb-6">
-                My Philosophy
+                {about.philosophyTitle}
               </h3>
               <div className="space-y-4">
-                <Card className="bg-neutral-900/50 border-neutral-800">
-                  <CardContent className="pt-6">
-                    <p className="text-neutral-300 leading-relaxed">
-                      <strong className="text-white">Collaborative Problem-Solving:</strong> I believe
-                      in working closely with teams to solve complex challenges. Every solution is 
-                      better when built through collaboration and diverse perspectives.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="bg-neutral-900/50 border-neutral-800">
-                  <CardContent className="pt-6">
-                    <p className="text-neutral-300 leading-relaxed">
-                      <strong className="text-white">User-Focused Development:</strong> Technology
-                      should serve people. I prioritize creating intuitive, accessible experiences 
-                      that users love to interact with, ensuring responsive design and security in 
-                      production code.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="bg-neutral-900/50 border-neutral-800">
-                  <CardContent className="pt-6">
-                    <p className="text-neutral-300 leading-relaxed">
-                      <strong className="text-white">Continuous Learning:</strong> The
-                      tech landscape evolves rapidly. I stay current with industry trends, 
-                      continuously expand my skill set, and value working in teams that prioritize 
-                      innovation, learning, and humanity.
-                    </p>
-                  </CardContent>
-                </Card>
+                {about.philosophy.map((item) => (
+                  <Card key={item.title} className="bg-neutral-900/50 border-neutral-800">
+                    <CardContent className="pt-6">
+                      <p className="text-neutral-300 leading-relaxed">
+                        <strong className="text-white">{item.title}:</strong> {item.text}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </motion.div>
 
@@ -165,10 +90,10 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
             >
               <h3 className="text-2xl font-bold text-white mb-8">
-                Experience
+                {about.experienceTitle}
               </h3>
               <div className="space-y-6">
-                {experiences.map((exp, index) => (
+                {about.experience.map((exp, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
@@ -180,10 +105,10 @@ export default function AboutPage() {
                     <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full border-2 border-[#09090b]" />
                     <div className="mb-2">
                       <span className="text-blue-400 text-sm font-medium">
-                        {exp.year}
+                        {exp.period}
                       </span>
                       <h4 className="text-xl font-bold text-white mt-1">
-                        {exp.title}
+                        {exp.role}
                       </h4>
                       <p className="text-neutral-400 text-sm">{exp.company}</p>
                     </div>
@@ -202,32 +127,36 @@ export default function AboutPage() {
               className="mt-16"
             >
               <h3 className="text-2xl font-bold text-white mb-6">
-                Education & Certifications
+                {about.educationTitle}
               </h3>
               <div className="space-y-4">
-                <Card className="bg-neutral-900/50 border-neutral-800">
-                  <CardContent className="pt-6">
-                    <h4 className="text-xl font-bold text-white mb-2">
-                      Diploma in Computer Networking
-                    </h4>
-                    <p className="text-neutral-400 mb-2">
-                      Federal University of Technology, Minna
-                    </p>
-                    <p className="text-neutral-300">2021</p>
-                  </CardContent>
-                </Card>
-                <Card className="bg-neutral-900/50 border-neutral-800">
-                  <CardContent className="pt-6">
-                    <h4 className="text-xl font-bold text-white mb-4">
-                      Certifications & Training
-                    </h4>
-                    <ul className="space-y-2 text-neutral-300">
-                      <li>• Full Stack Web Development Certification — 2022</li>
-                      <li>• DevOps Training — Ongoing</li>
-                      <li>• Blockchain — Ongoing</li>
-                    </ul>
-                  </CardContent>
-                </Card>
+                {about.education.map((item) => (
+                  <Card key={`${item.qualification}-${item.year}`} className="bg-neutral-900/50 border-neutral-800">
+                    <CardContent className="pt-6">
+                      <h4 className="text-xl font-bold text-white mb-2">
+                        {item.qualification}
+                      </h4>
+                      <p className="text-neutral-400 mb-2">
+                        {item.institution}
+                      </p>
+                      <p className="text-neutral-300">{item.year}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+                {about.certifications.length > 0 && (
+                  <Card className="bg-neutral-900/50 border-neutral-800">
+                    <CardContent className="pt-6">
+                      <h4 className="text-xl font-bold text-white mb-4">
+                        {about.certificationsTitle}
+                      </h4>
+                      <ul className="space-y-2 text-neutral-300">
+                        {about.certifications.map((cert) => (
+                          <li key={cert}>• {cert}</li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                )}
               </div>
             </motion.div>
           </div>

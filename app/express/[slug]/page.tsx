@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import { ExpressShell } from "@/components/express/ExpressShell"
-import { expressPosts } from "@/data/express-posts"
+import { expressPosts } from "@/lib/content/express"
 
 type ArticlePageProps = {
   params: Promise<{ slug: string }>

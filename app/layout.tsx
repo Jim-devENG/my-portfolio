@@ -1,39 +1,40 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import { site } from "@/lib/content"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
-  title: "James Olorunfemi Enietan | Software Engineer",
-  description: "Software Engineer building scalable, secure, and user-focused web applications. Specializing in React, Node.js, Python, FastAPI, and blockchain development.",
-  keywords: ["full stack developer", "software engineer", "blockchain developer", "developer", "portfolio", "James Enietan", "React", "Node.js", "Laravel", "Python", "FastAPI", "Solidity", "AI", "machine learning"],
-  authors: [{ name: "James Olorunfemi Enietan" }],
+  title: site.seo.title,
+  description: site.seo.description,
+  keywords: site.seo.keywords,
+  authors: [{ name: site.fullName }],
   icons: {
-    icon: "/James Enietan Logo favicon.png",
-    shortcut: "/James Enietan Logo favicon.png",
-    apple: "/James Enietan Logo favicon.png",
+    icon: site.logo,
+    shortcut: site.logo,
+    apple: site.logo,
   },
   openGraph: {
-    title: "James Olorunfemi Enietan | Software Engineer",
-    description: "Software Engineer building scalable, secure, and user-focused web applications. Specializing in React, Node.js, Python, FastAPI, and blockchain development.",
+    title: site.seo.title,
+    description: site.seo.description,
     type: "website",
-    url: "https://jimmyenietan.site",
-    siteName: "James Olorunfemi Enietan",
+    url: site.seo.url,
+    siteName: site.fullName,
     images: [
       {
-        url: "/James Enietan Logo favicon.png",
+        url: site.logo,
         width: 1200,
         height: 630,
-        alt: "James Olorunfemi Enietan - Software Engineer",
+        alt: site.seo.title,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "James Olorunfemi Enietan | Software Engineer",
-    description: "Software Engineer building scalable, secure, and user-focused web applications. Specializing in React, Node.js, Python, FastAPI, and blockchain development.",
-    images: ["/James Enietan Logo favicon.png"],
+    title: site.seo.title,
+    description: site.seo.description,
+    images: [site.logo],
   },
 }
 

@@ -96,6 +96,8 @@ This Next.js app can also be deployed to:
 
 ```
 ├── app/                    # Next.js App Router pages
+│   ├── admin/             # Content admin (/admin)
+│   ├── api/admin/         # Admin login and save endpoints
 │   ├── page.tsx           # Home page
 │   ├── projects/          # Projects page
 │   ├── about/             # About page
@@ -108,19 +110,36 @@ This Next.js app can also be deployed to:
 │   ├── layout/           # Footer component
 │   ├── sections/         # Page sections
 │   └── cards/            # Card components
-├── data/                 # Data files (projects, skills)
-├── lib/                  # Utility functions
+├── content/              # Site content as JSON (edited via /admin)
+├── lib/                  # Content schemas, admin helpers, utilities
 └── public/               # Static assets
 ```
 
 ## 🎨 Customization
 
-### Update Personal Information
+### Update Content (Admin)
 
-1. **Projects**: Edit `data/projects.ts`
-2. **Skills**: Edit `data/skills.ts`
-3. **Metadata**: Update `app/layout.tsx`
-4. **Social Links**: Update `components/layout/Footer.tsx` and `app/contact/page.tsx`
+All text, projects, skills, experience, Express posts, social links and SEO
+settings live in `content/*.json` and are edited at **`/admin`**.
+
+- **Saving** commits the changed JSON (and any uploaded images) to GitHub in a
+  single commit. Vercel then redeploys, so changes are live in about 1–2 minutes.
+- **Images** are resized to at most 1600px and converted to WebP in the browser
+  before upload (the server rejects anything over 1 MB).
+- **Locally** (`npm run dev`), saves are written straight to `content/` and
+  `public/` instead of GitHub.
+
+Set these environment variables in Vercel (see `.env.example`):
+
+| Variable | Purpose |
+| --- | --- |
+| `ADMIN_PASSWORD` | Admin login password (at least 10 characters) |
+| `ADMIN_SESSION_SECRET` | Random string of 32+ characters used to sign the login cookie |
+| `GITHUB_TOKEN` | Fine-grained token with **Contents: read and write** on this repo only |
+| `GITHUB_REPO` | `owner/repo`, e.g. `Jim-devENG/my-portfolio` |
+| `GITHUB_BRANCH` | Branch Vercel deploys from (default `main`) |
+
+Changing `ADMIN_PASSWORD` or `ADMIN_SESSION_SECRET` signs out every session.
 
 ### Styling
 

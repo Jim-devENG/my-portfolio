@@ -1,0 +1,48 @@
+{
+  "brandName": "James Enietan",
+  "fullName": "James Olorunfemi Enietan",
+  "logo": "/James Enietan Logo favicon.png",
+  "seo": {
+    "title": "James Olorunfemi Enietan | Software Engineer",
+    "description": "Software Engineer building scalable, secure, and user-focused web applications. Specializing in React, Node.js, Python, FastAPI, and blockchain development.",
+    "keywords": [
+      "full stack developer",
+      "software engineer",
+      "blockchain developer",
+      "developer",
+      "portfolio",
+      "James Enietan",
+      "React",
+      "Node.js",
+      "Laravel",
+      "Python",
+      "FastAPI",
+      "Solidity",
+      "AI",
+      "machine learning"
+    ],
+    "url": "https://jimmyenietan.site"
+  },
+  "social": [
+    {
+      "platform": "email",
+      "label": "jamesenietan@gmail.com",
+      "url": "mailto:jamesenietan@gmail.com"
+    },
+    {
+      "platform": "github",
+      "label": "github.com/Jim-devENG",
+      "url": "https://github.com/Jim-devENG"
+    },
+    {
+      "platform": "linkedin",
+      "label": "linkedin.com/in/enietan-jimmy",
+      "url": "https://linkedin.com/in/enietan-jimmy"
+    },
+    {
+      "platform": "twitter",
+      "label": "@jimmy",
+      "url": "#"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "title": "About Me",
+  "subtitle": "A glimpse into my journey and philosophy",
+  "photo": "/uploads/profile.webp",
+  "photoAlt": "James Olorunfemi Enietan",
+  "heading": "Software Engineer • AI Integrations • Product Builder",
+  "bio": [
+    "I build fast, scalable, and production-ready software products—combining solid full-stack engineering with practical AI integration. I work across React, TypeScript, Node.js, Python/FastAPI, Laravel, and modern cloud tools, delivering systems that are stable, maintainable, and optimized for real users.",
+    "I'm currently expanding into AI/ML workflows and blockchain (Solidity), focusing on how emerging technologies can solve real problems, not just add buzzwords. My experience spans API design, distributed architecture, relational/non-relational databases, and cross-platform applications.",
+    "I thrive in intense environments where shipping quality software matters. I value clean code, clarity of thought, and building products that actually work. I also bring a creative edge from years of design experience and startup building."
+  ],
+  "philosophyTitle": "My Philosophy",
+  "philosophy": [
+    {
+      "title": "Collaborative Problem-Solving",
+      "text": "I believe in working closely with teams to solve complex challenges. Every solution is better when built through collaboration and diverse perspectives."
+    },
+    {
+      "title": "User-Focused Development",
+      "text": "Technology should serve people. I prioritize creating intuitive, accessible experiences that users love to interact with, ensuring responsive design and security in production code."
+    },
+    {
+      "title": "Continuous Learning",
+      "text": "The tech landscape evolves rapidly. I stay current with industry trends, continuously expand my skill set, and value working in teams that prioritize innovation, learning, and humanity."
+    }
+  ],
+  "experienceTitle": "Experience",
+  "experience": [
+    {
+      "period": "2021",
+      "role": "Software Developer",
+      "company": "ITSkillsCenter",
+      "description": "Developed educational software solutions and learning management systems. Built interactive platforms for skill development and training."
+    },
+    {
+      "period": "2022/2023",
+      "role": "Web Developer",
+      "company": "Flincap — Lagos",
+      "description": "Built and maintained full-stack fintech applications with React.js and Node.js. Integrated financial APIs and optimized MongoDB database interactions."
+    },
+    {
+      "period": "2022/2023",
+      "role": "Frontend Developer",
+      "company": "Venturage Technologies",
+      "description": "Developed responsive front-end interfaces and user experiences using modern web technologies. Collaborated with cross-functional teams to deliver high-quality applications."
+    },
+    {
+      "period": "2023",
+      "role": "Web Designer",
+      "company": "tnllegals.com",
+      "description": "Designed and developed professional web interfaces for legal services. Created user-friendly, responsive designs optimized for client engagement."
+    },
+    {
+      "period": "2023 - 2025",
+      "role": "Web Developer",
+      "company": "BlueInc — Abuja",
+      "description": "Designed front-end interfaces using Vue.js and Bootstrap. Optimized page load speed by 25% using lazy loading and performance audits."
+    },
+    {
+      "period": "2025",
+      "role": "Software Developer",
+      "company": "Getbusy — Jos",
+      "description": "Built and maintained full-stack software and applications with React.js, Next.js, Node.js, PHP Laravel. Integrated APIs and optimized database interactions for performance."
+    },
+    {
+      "period": "2025",
+      "role": "CTO/Team Lead",
+      "company": "iSpora — Ogbomoso",
+      "description": "Leading technical strategy and development for a social collaboration platform using React.js, Next.js, Node.js, and Laravel. Managing team operations, engineering smooth API integrations, and fine-tuning MySQL queries for optimal performance."
+    },
+    {
+      "period": "2025",
+      "role": "Software Developer",
+      "company": "Crysgarage",
+      "description": "Developing and maintaining a professional audio mastering platform using React.js, TypeScript, Python, FastAPI, and Firebase. Building real-time audio processing features, RESTful API integrations, and implementing advanced audio analysis tools with ITU-R BS.1770 LUFS measurement."
+    }
+  ],
+  "educationTitle": "Education & Certifications",
+  "education": [
+    {
+      "qualification": "Diploma in Computer Networking",
+      "institution": "Federal University of Technology, Minna",
+      "year": "2021"
+    }
+  ],
+  "certificationsTitle": "Certifications & Training",
+  "certifications": [
+    "Full Stack Web Development Certification — 2022",
+    "DevOps Training — Ongoing",
+    "Blockchain — Ongoing"
+  ]
+}

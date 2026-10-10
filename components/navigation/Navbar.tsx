@@ -6,6 +6,7 @@ import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { site } from "@/lib/content"
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -43,13 +44,13 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/James Enietan Logo favicon.png"
-              alt="James Enietan Logo"
+              src={site.logo}
+              alt={`${site.brandName} Logo`}
               width={32}
               height={32}
               className="object-contain"
             />
-            <span className="text-xl font-bold text-white">James Enietan</span>
+            <span className="text-xl font-bold text-white">{site.brandName}</span>
           </Link>
 
           {/* Desktop Navigation */}

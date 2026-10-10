@@ -8,9 +8,10 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { Mail, Github, Linkedin, Twitter } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
+import { contact, site } from "@/lib/content"
+import { socialMeta } from "@/components/layout/social"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -27,21 +28,14 @@ export default function ContactPage() {
     setFormData({ name: "", email: "", message: "" })
   }
 
-  const socialLinks = [
-    { name: "Email", icon: Mail, href: "mailto:jamesenietan@gmail.com", label: "jamesenietan@gmail.com" },
-    { name: "GitHub", icon: Github, href: "https://github.com/Jim-devENG", label: "github.com/Jim-devENG" },
-    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/enietan-jimmy", label: "linkedin.com/in/enietan-jimmy" },
-    { name: "Twitter", icon: Twitter, href: "#", label: "@jimmy" },
-  ]
-
   return (
     <main className="min-h-screen bg-[#09090b]">
       <Navbar />
       <section className="pt-32 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            title="Get In Touch"
-            subtitle="Let's discuss your next project or just say hello"
+            title={contact.title}
+            subtitle={contact.subtitle}
           />
 
           <div className="max-w-4xl mx-auto">
@@ -132,26 +126,25 @@ export default function ContactPage() {
                 <Card className="bg-neutral-900/50 border-neutral-800">
                   <CardContent className="pt-6">
                     <h3 className="text-xl font-bold text-white mb-4">
-                      Let&apos;s Connect
+                      {contact.connectTitle}
                     </h3>
                     <p className="text-neutral-300 mb-6">
-                      I&apos;m always open to discussing new projects, creative ideas,
-                      or opportunities to be part of your vision.
+                      {contact.connectText}
                     </p>
                     <div className="space-y-4">
-                      {socialLinks.map((link) => {
-                        const Icon = link.icon
+                      {site.social.map((link) => {
+                        const { name, icon: Icon } = socialMeta[link.platform]
                         return (
                           <Link
-                            key={link.name}
-                            href={link.href}
+                            key={`${link.platform}-${link.url}`}
+                            href={link.url}
                             className="flex items-center space-x-3 text-neutral-300 hover:text-white transition-colors group"
                           >
                             <div className="p-2 bg-neutral-800 rounded-lg group-hover:bg-blue-500/20 transition-colors">
                               <Icon className="h-5 w-5" />
                             </div>
                             <div>
-                              <div className="text-sm font-medium">{link.name}</div>
+                              <div className="text-sm font-medium">{name}</div>
                               <div className="text-xs text-neutral-500">{link.label}</div>
                             </div>
                           </Link>
@@ -164,11 +157,10 @@ export default function ContactPage() {
                 <Card className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 border-blue-500/20">
                   <CardContent className="pt-6">
                     <h3 className="text-xl font-bold text-white mb-2">
-                      Response Time
+                      {contact.responseTitle}
                     </h3>
                     <p className="text-neutral-300 text-sm">
-                      I typically respond within 24-48 hours. For urgent matters,
-                      feel free to reach out via email.
+                      {contact.responseText}
                     </p>
                   </CardContent>
                 </Card>

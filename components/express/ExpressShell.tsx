@@ -24,9 +24,6 @@ export function ExpressShell({ children }: ExpressShellProps) {
               <Link href="/express" className="rounded-full border border-white/15 px-4 py-2 text-neutral-200 transition hover:border-white/40 hover:bg-white/5">
                 Journal
               </Link>
-              <Link href="/express/admin" className="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-cyan-100 transition hover:bg-cyan-400/20">
-                Workspace
-              </Link>
             </nav>
           </div>
         </header>

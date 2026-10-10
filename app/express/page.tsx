@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { ExpressShell } from "@/components/express/ExpressShell"
-import { expressPosts, publicationSections } from "@/data/express-posts"
+import { express, expressPosts, publicationSections } from "@/lib/content/express"
 
 export default function ExpressHomePage() {
   const featuredPost = expressPosts.find((post) => post.section === "Featured" && post.status === "Published")
@@ -32,10 +32,9 @@ export default function ExpressHomePage() {
         <div className="space-y-4 rounded-3xl border border-white/10 bg-white/[0.03] p-6">
           <p className="text-xs uppercase tracking-[0.24em] text-neutral-400">Editorial Code</p>
           <ul className="space-y-3 text-sm leading-relaxed text-neutral-300">
-            <li>Identity over templates.</li>
-            <li>Typography before decoration.</li>
-            <li>Distinct sections with distinct intent.</li>
-            <li>Readable futurism, never noise.</li>
+            {express.editorialCode.map((line) => (
+              <li key={line}>{line}</li>
+            ))}
           </ul>
         </div>
       </section>

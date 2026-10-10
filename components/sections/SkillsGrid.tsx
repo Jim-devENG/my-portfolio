@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { skills } from "@/data/skills"
+import { skills } from "@/lib/content"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Code2, Database, Palette, Wrench } from "lucide-react"
 

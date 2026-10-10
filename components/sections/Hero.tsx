@@ -4,9 +4,12 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
+import { home } from "@/lib/content"
+import { HighlightedText } from "@/components/ui/highlighted-text"
 
 export function Hero() {
+  const { hero } = home
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
@@ -142,34 +145,34 @@ export function Hero() {
                     animation: "gradient 5s linear infinite",
                   }}
                 >
-                  Software Engineer
+                  {hero.headline}
                 </motion.span>
-                <span className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
-                  <motion.span
-                    className="text-white/95 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight"
-                    initial={{ opacity: 0, x: -15 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-                  >
-                    AI Integrations
-                  </motion.span>
-                  <motion.span
-                    className="text-blue-400/40 text-lg sm:text-xl md:text-2xl font-light"
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
-                  >
-                    •
-                  </motion.span>
-                  <motion.span
-                    className="text-white/95 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight"
-                    initial={{ opacity: 0, x: 15 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
-                  >
-                    Intelligent Product Builder
-                  </motion.span>
-                </span>
+                {hero.taglines.length > 0 && (
+                  <span className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
+                    {hero.taglines.map((tagline, i) => (
+                      <Fragment key={tagline}>
+                        {i > 0 && (
+                          <motion.span
+                            className="text-blue-400/40 text-lg sm:text-xl md:text-2xl font-light"
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.4, delay: 0.5, ease: "easeOut" }}
+                          >
+                            •
+                          </motion.span>
+                        )}
+                        <motion.span
+                          className="text-white/95 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight"
+                          initial={{ opacity: 0, x: i === 0 ? -15 : 15 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.7, delay: 0.3 + i * 0.1, ease: "easeOut" }}
+                        >
+                          {tagline}
+                        </motion.span>
+                      </Fragment>
+                    ))}
+                  </span>
+                )}
               </span>
             </motion.h1>
           </motion.div>
@@ -180,10 +183,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-neutral-300 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            Building full-stack systems,{" "}
-            <span className="text-blue-400 font-semibold">integrating AI</span> where it drives impact, and{" "}
-            <span className="text-purple-400 font-semibold">shipping products</span> that{" "}
-            <span className="text-pink-400 font-semibold">solve real problems</span>.
+            <HighlightedText text={hero.intro} />
           </motion.p>
 
           <motion.div
@@ -197,8 +197,8 @@ export function Hero() {
               whileTap={{ scale: 0.95 }}
             >
               <Button asChild size="lg" className="group relative overflow-hidden bg-gradient-to-r from-blue-500 to-purple-500 border-0">
-                <Link href="/projects" className="relative z-10">
-                  View Projects
+                <Link href={hero.primaryCta.href} className="relative z-10">
+                  {hero.primaryCta.label}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -208,48 +208,47 @@ export function Hero() {
               whileTap={{ scale: 0.95 }}
             >
               <Button asChild variant="outline" size="lg" className="group border-2 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all">
-                <Link href="/contact">
-                  Get In Touch
+                <Link href={hero.secondaryCta.href}>
+                  {hero.secondaryCta.label}
                 </Link>
               </Button>
             </motion.div>
           </motion.div>
 
           {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
-          >
-            {[
-              { number: "10+", label: "Projects" },
-              { number: "100%", label: "Dedicated" },
-              { number: "∞", label: "Passion" },
-            ].map((stat, i) => (
-              <motion.div
-                key={i}
-                className="text-center"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
+          {hero.stats.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="mt-16 grid gap-8 max-w-2xl mx-auto"
+              style={{ gridTemplateColumns: `repeat(${hero.stats.length}, minmax(0, 1fr))` }}
+            >
+              {hero.stats.map((stat, i) => (
                 <motion.div
-                  className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
-                  animate={{
-                    scale: [1, 1.1, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: i * 0.3,
-                  }}
+                  key={i}
+                  className="text-center"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  {stat.number}
+                  <motion.div
+                    className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+                    animate={{
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: i * 0.3,
+                    }}
+                  >
+                    {stat.value}
+                  </motion.div>
+                  <div className="text-sm text-neutral-400 mt-1">{stat.label}</div>
                 </motion.div>
-                <div className="text-sm text-neutral-400 mt-1">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          )}
         </div>
       </div>
 

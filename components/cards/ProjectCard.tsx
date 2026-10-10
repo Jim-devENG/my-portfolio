@@ -6,7 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github } from "lucide-react"
 import Link from "next/link"
-import type { Project } from "@/data/projects"
+import type { Project } from "@/lib/content"
 
 interface ProjectCardProps {
   project: Project
